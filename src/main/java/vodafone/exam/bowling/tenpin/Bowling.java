@@ -6,6 +6,9 @@ import java.util.List;
 
 /**
  * Created by karthik on 5/02/17.
+ *
+ * Calculates the total score for ten pin bowling based on inputs.
+ * The inputs can be supplied as an array of scores or individual frames.
  */
 public class Bowling {
 
@@ -80,12 +83,13 @@ public class Bowling {
             return Boolean.FALSE;
         }
 
-        tallyDone = Boolean.FALSE;
+        tallyDone = Boolean.FALSE; // Indicates total score has to be re-evaluated
 
         return frames.add(f);
 
     }
 
+    // Calculate total score. Does not re-calculate if already done with the same inputs
     public int tallyFrames() {
 
         if (!tallyDone) {
@@ -104,7 +108,7 @@ public class Bowling {
         return totalScore;
     }
 
-    // The tally score for a single frame after evaluating strike and spare
+    // The score for a single frame after evaluating strike and spare
     private int tallyFrame(int frameNumber) {
 
         int tally = 0;
