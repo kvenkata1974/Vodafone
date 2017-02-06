@@ -17,6 +17,10 @@ public class Bowling {
 
     private List<Frame> frames;
 
+    private Boolean tallyDone = Boolean.FALSE;
+
+    private int totalScore = 0;
+
 
     public Bowling(String unverifiedScores[]) {
 
@@ -76,21 +80,31 @@ public class Bowling {
             return Boolean.FALSE;
         }
 
+        tallyDone = Boolean.FALSE;
+
         return frames.add(f);
 
     }
 
     public int tallyFrames() {
 
-        int tally = 0;
+        if (!tallyDone) {
 
-        for (int i = 0; i < frames.size(); i++) {
-            tally += tallyFrame(i);
+            int tally = 0;
+
+            for (int i = 0; i < frames.size(); i++) {
+                tally += tallyFrame(i);
+            }
+
+            totalScore = tally;
+            tallyDone = Boolean.TRUE;
         }
 
-        return tally;
+
+        return totalScore;
     }
 
+    // The tally score for a single frame after evaluating strike and spare
     private int tallyFrame(int frameNumber) {
 
         int tally = 0;
@@ -137,7 +151,6 @@ public class Bowling {
 
         }
 
-        System.out.println("Frame " + frameNumber + " = " + tally);
         return tally;
     }
 

@@ -1,7 +1,11 @@
 # Vodafone
 Tenpin bowling exam
 
-Excute the program as follows in the target directory:
+Build and install the program using maven as follows:
+
+mvn clean install
+
+Execute the program as follows in the target directory:
 
 java -jar bowling.tenpin-1.0-SNAPSHOT.jar <Array of scores>
 
