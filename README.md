@@ -7,7 +7,7 @@ mvn clean install
 
 Execute the program as follows in the target directory:
 
-java -jar bowling.tenpin-1.0-SNAPSHOT.jar <Array of scores>
+java -jar bowling.tenpin-1.0-SNAPSHOT.jar [Array of scores]
 
 An example of the above would be:
 
